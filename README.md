@@ -1,8 +1,8 @@
 # Faraday AWS X-Ray Middleware
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ajayzes/faraday-aws-xray/faraday-aws-xray/ci)](https://github.com/ajayzes/faraday-aws-xray/faraday-aws-xray/actions?query=branch%3Amain)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jayzes/faraday-aws-xray/ci)](https://github.com/jayzes/faraday-aws-xray/actions?query=branch%3Amain)
 [![Gem](https://img.shields.io/gem/v/faraday-aws-xray.svg?style=flat-square)](https://rubygems.org/gems/faraday-aws-xray)
-[![License](https://img.shields.io/github/license/ajayzes/faraday-aws-xray/faraday-aws-xray.svg?style=flat-square)](LICENSE.md)
+[![License](https://img.shields.io/github/license/jayzes/faraday-aws-xray.svg?style=flat-square)](LICENSE.md)
 
 Faraday 2+ middleware to instrument spans for [AWS X-Ray](https://aws.amazon.com/xray/).
 
