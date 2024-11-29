@@ -1,10 +1,10 @@
-# Faraday Aws Xray
+# Faraday AWS X-Ray Middleware
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ajayzes/faraday-aws-xray/faraday-aws-xray/ci)](https://github.com/ajayzes/faraday-aws-xray/faraday-aws-xray/actions?query=branch%3Amain)
 [![Gem](https://img.shields.io/gem/v/faraday-aws-xray.svg?style=flat-square)](https://rubygems.org/gems/faraday-aws-xray)
 [![License](https://img.shields.io/github/license/ajayzes/faraday-aws-xray/faraday-aws-xray.svg?style=flat-square)](LICENSE.md)
 
-Faraday middleware to instrument spans for AWS X-Ray.
+Faraday 2+ middleware to instrument spans for [AWS X-Ray](https://aws.amazon.com/xray/).
 
 ## Installation
 
@@ -30,8 +30,14 @@ gem install faraday-aws-xray
 
 ```ruby
 require 'faraday/aws/xray'
+```
 
-# TODO
+Then wherever you configure your Faraday connection, add the middleware:
+
+```ruby
+Faraday.new(...) do |conn|
+  conn.use Faraday::Aws::XRay::Middleware
+end
 ```
 
 ## Development
