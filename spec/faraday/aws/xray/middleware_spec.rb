@@ -18,8 +18,8 @@ RSpec.describe Faraday::Aws::XRay::Middleware do
   let(:subsegment) { instance_double(XRay::Subsegment) }
 
   before do
-    allow(::XRay.recorder).to receive(:capture).and_yield(segment)
-    allow(::XRay.recorder).to receive(:capture).and_yield(subsegment)
+    allow(XRay.recorder).to receive(:capture).and_yield(segment)
+    allow(XRay.recorder).to receive(:capture).and_yield(subsegment)
     allow(subsegment).to receive(:merge_http_request)
     allow(subsegment).to receive(:merge_http_response)
   end
@@ -27,8 +27,8 @@ RSpec.describe Faraday::Aws::XRay::Middleware do
   describe '#call' do
     it 'creates an X-Ray segment and subsegment' do
       middleware.call(env)
-      expect(::XRay.recorder).to have_received(:capture).with('test_request')
-      expect(::XRay.recorder).to have_received(:capture).with('https://example.com/test')
+      expect(XRay.recorder).to have_received(:capture).with('test_request')
+      expect(XRay.recorder).to have_received(:capture).with('https://example.com/test')
     end
 
     it 'adds request data to the subsegment' do
@@ -43,7 +43,7 @@ RSpec.describe Faraday::Aws::XRay::Middleware do
     end
 
     it 'adds response data to the subsegment' do
-      allow(::XRay.recorder).to receive(:capture).and_yield(subsegment)
+      allow(XRay.recorder).to receive(:capture).and_yield(subsegment)
       middleware.call(env)
       expect(subsegment).to have_received(:merge_http_response).with(
         response: {

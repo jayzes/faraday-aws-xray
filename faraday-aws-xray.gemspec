@@ -32,6 +32,6 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 3.0', '< 4'
 
-  spec.add_dependency 'faraday', '>= 2.9', '< 3'
   spec.add_dependency 'aws-xray-sdk'
+  spec.add_dependency 'faraday', '>= 2.9', '< 3'
 end
